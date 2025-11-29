@@ -8,8 +8,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Task1Bootstrap.Run();
-        // Task2Bootstrap.Run();
+        Task1Bootstrap.Run();
+        Task2Bootstrap.Run();
         Task3Bootstrap.Run();
     }
 }
