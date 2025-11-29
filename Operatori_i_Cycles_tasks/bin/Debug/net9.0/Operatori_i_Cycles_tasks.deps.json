@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Operatori_i_Cycles_tasks/1.0.0": {
+        "runtime": {
+          "Operatori_i_Cycles_tasks.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Operatori_i_Cycles_tasks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

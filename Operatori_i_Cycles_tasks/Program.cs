@@ -1,3 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Variables_tasks.Task1;
+using Variables_tasks.Task2;
+using Variables_tasks.Task3;
 
-Console.WriteLine("Hello, World!");
+namespace Variables_tasks;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Task1Bootstrap.Run();
+        // Task2Bootstrap.Run();
+        Task3Bootstrap.Run();
+    }
+}
