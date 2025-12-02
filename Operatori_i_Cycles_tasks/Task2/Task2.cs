@@ -4,16 +4,10 @@ public class Task2Bootstrap
 {
     public static void Run()
     {
-        bool isCycleActive = true;
-        
-        while (isCycleActive)
+        do
         {
             Console.WriteLine("Цикл работает, введите exit чтоб выйти из него");
-            
-            if (Console.ReadLine() == "exit")
-            {
-                isCycleActive = false;
-            }
-        }
+        } 
+        while (Console.ReadLine() != "exit");
     }
 }

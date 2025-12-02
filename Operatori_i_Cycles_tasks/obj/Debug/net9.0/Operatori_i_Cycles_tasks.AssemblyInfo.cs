@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Operatori_i_Cycles_tasks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96758a4197b30bc25eed43013c51d0571309737e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b64708a4c171b5c05a5f2275a8fe8dbb2475d232")]
 [assembly: System.Reflection.AssemblyProductAttribute("Operatori_i_Cycles_tasks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Operatori_i_Cycles_tasks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
