@@ -17,7 +17,7 @@ public class Task4Bootstrap
         
         int finalSum = 0;
 
-        for (int i = 0; i < number; i++)
+        for (int i = 0; i <= number; i++)
         {
             if (i % FIRST_DIVISOR == 0 || i % SECOND_DIVISOR == 0)
             {

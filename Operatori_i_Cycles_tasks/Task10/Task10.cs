@@ -6,9 +6,9 @@ public class Task10Bootstrap
     {
         const int POWER_BASE = 2;
         
-        Random rand = new Random();
+        Random random = new Random();
 
-        int targetValue = rand.Next(1, 100);
+        int targetValue = random.Next(1, 100);
 
         int currentPower = 0;
         int currentPowerValue = 1; 

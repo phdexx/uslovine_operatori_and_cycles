@@ -13,6 +13,7 @@ public class Task8Bootstrap
         while (!isPasswordCorrect && guessesCount > 0)
         {
             Console.WriteLine($"Введите пароль, у вас {guessesCount} попытки");
+            
             guessedPassword = Console.ReadLine();
             if (guessedPassword == PASSWORD)
             {
@@ -24,6 +25,7 @@ public class Task8Bootstrap
                 guessesCount--;
             }
         }
+        
         if (guessesCount == 0)
         {
             Console.WriteLine("Вы не угадали пароль, программа закрывается");

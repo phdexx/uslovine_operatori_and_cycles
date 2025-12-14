@@ -6,14 +6,11 @@ public class Task7Bootstrap
     {
         const int FRAME_EXTRA_SYMBOLS = 2;
         
-        string name = "";
-        char symbolForSquare = '0';
-        
         Console.WriteLine("Введите имя");
-        name = Console.ReadLine();
+        string name = Console.ReadLine();
 
         Console.WriteLine("Введите символ для заполнения");
-        symbolForSquare = Console.ReadLine()[0];
+        char symbolForSquare = Console.ReadLine()[0];
         
         string squareFrame = new string(symbolForSquare, name.Length + FRAME_EXTRA_SYMBOLS);
         

@@ -6,9 +6,9 @@ public class Task9Bootstrap
     public static void Run()
     {
         // я очень жестко тупил над этой задачей в плане написания названий переменных
-        Random rnd = new Random();
+        Random random = new Random();
         
-        int N = rnd.Next(10, 26);
+        int N = random.Next(10, 26);
         Console.WriteLine($"N которое мы получили: {N}");
         
         int count = 0;

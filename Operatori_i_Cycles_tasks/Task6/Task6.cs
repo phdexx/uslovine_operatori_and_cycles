@@ -34,7 +34,7 @@ public class Task6Bootstrap
             Console.WriteLine($"USD - {usdBalance}");
             Console.WriteLine($"ETH - {ethBalance}");
             Console.ResetColor();
-            
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Доступны операции:");
             Console.WriteLine("1 - Перевод RUB -> USD");
@@ -45,7 +45,7 @@ public class Task6Bootstrap
             Console.WriteLine("6 - Перевод ETH -> USD");
             Console.WriteLine("0 - Выйти из биржи");
             Console.ResetColor();
-            
+
             string currencyChangeChoice = Console.ReadLine();
             if (currencyChangeChoice == "0")
             {
@@ -54,86 +54,70 @@ public class Task6Bootstrap
                 Console.WriteLine("До свидания! Удачных торгов в будущем ;)");
                 break;
             }
-            
+
             Console.WriteLine("Сколько нужно перевести?");
             double valueToChange = Convert.ToDouble(Console.ReadLine());
-            
+
             switch (currencyChangeChoice)
-            { 
-                //rub cases 1-2
+            {
                 case "1":
-                    if (valueToChange > rubBalance)
-                    {
-                        Console.WriteLine("Недостаточно RUB");
-                    }
+                    if (TryExchange(ref rubBalance, ref usdBalance, valueToChange, RUB_TO_USD_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали RUB в USD");
                     else
-                    {
-                        rubBalance -= valueToChange;
-                        usdBalance += valueToChange * RUB_TO_USD_CURRENCY;
-                    }
+                        Console.WriteLine("Недостаточно RUB");
                     break;
+
                 case "2":
-                    if (valueToChange > rubBalance)
-                    {
+                    if (TryExchange(ref rubBalance, ref ethBalance, valueToChange, RUB_TO_ETH_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали RUB в ETH");
+                    else
                         Console.WriteLine("Недостаточно RUB");
-                    }
-                    else
-                    {
-                        rubBalance -= valueToChange;
-                        ethBalance += valueToChange * RUB_TO_ETH_CURRENCY;
-                    }
                     break;
-                //usd cases 3-4
+
                 case "3":
-                    if (valueToChange > usdBalance)
-                    {
-                        Console.WriteLine("Недостаточно USD");
-                    }
+                    if (TryExchange(ref usdBalance, ref rubBalance, valueToChange, USD_TO_RUB_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали USD в RUB");
                     else
-                    {
-                        usdBalance -= valueToChange;
-                        rubBalance += valueToChange * USD_TO_RUB_CURRENCY;
-                    }
+                        Console.WriteLine("Недостаточно USD");
                     break;
+
                 case "4":
-                    if (valueToChange > usdBalance)
-                    {
+                    if (TryExchange(ref usdBalance, ref ethBalance, valueToChange, USD_TO_ETH_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали USD в ETH");
+                    else
                         Console.WriteLine("Недостаточно USD");
-                    }
-                    else
-                    {
-                        usdBalance -= valueToChange;
-                        ethBalance += valueToChange * USD_TO_ETH_CURRENCY;
-                    }
                     break;
-                //eth cases 5-6
+
                 case "5":
-                    if (valueToChange > ethBalance)
-                    {
-                        Console.WriteLine("Недостаточно ETH");
-                    }
+                    if (TryExchange(ref ethBalance, ref rubBalance, valueToChange, ETH_TO_RUB_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали ETH в RUB");
                     else
-                    {
-                        ethBalance -= valueToChange;
-                        rubBalance += valueToChange * ETH_TO_RUB_CURRENCY;
-                    }
+                        Console.WriteLine("Недостаточно ETH");
                     break;
+
                 case "6":
-                    if (valueToChange > ethBalance)
-                    {
-                        Console.WriteLine("Недостаточно ETH");
-                    }
+                    if (TryExchange(ref ethBalance, ref usdBalance, valueToChange, ETH_TO_USD_CURRENCY))
+                        Console.WriteLine("Успешно конвертировали ETH в USD");
                     else
-                    {
-                        ethBalance -= valueToChange;
-                        usdBalance += valueToChange * ETH_TO_USD_CURRENCY;
-                    }
+                        Console.WriteLine("Недостаточно ETH");
                     break;
+
                 default:
                     Console.WriteLine("Нет такого варианта!");
                     break;
             }
-
         }
+    }
+
+    private static bool TryExchange(ref double fromBalance, ref double toBalance, double amount, double rate)
+    {
+        if (amount > fromBalance)
+        {
+            return false;
+        }
+
+        fromBalance -= amount;
+        toBalance += amount * rate;
+        return true;
     }
 }
